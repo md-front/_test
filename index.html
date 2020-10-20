@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parseHH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="./src/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+
+<!--    <form action=""></form>-->
+</header>
+<main></main>
+<footer>
+<!--    <div>Скрытые вакансии</div>-->
+</footer>
+
+<script>
+    // debug
+    const LOAD_ALL_DATA = true;
+    // const LOAD_ALL_DATA = false;
+
+    // Регулярки имени вакансии
+    const NEW_IN_DAYS = 1;
+    const NECESSARY = new RegExp(/front|фронт|js|javascript/i);
+    const UNNECESSARY = new RegExp(/backend|fullstack|SQL|lead|ведущий|angular/i);
+    const JUNIOR = new RegExp(/junior|стажер|младший/i);
+    const COMPANY_BLACKLIST = ['4932875','46587']; /* TODO забивается руками */
+
+    const PARAMS = [
+        {
+            'id': 'ekb',
+            'name': 'Екатеринбург',
+            'location': 'area=3',
+        },
+        /*{
+            'id': 'remote',
+            'name': 'Удалённо',
+            'location': 'schedule=remote'
+        },*/
+    ]
+
+    const FAV = {
+        name: 'favorite',
+        img_url: './assets/star.svg',
+        btn_text: 'избранное'
+    };
+    const DEL = {
+        name: 'blacklist',
+        img_url: './assets/del.svg',
+        btn_text: 'скрытые вакансии'
+    };
+
+    const ACTIONS = {};
+</script>
+<script src="./src/helpers.js"></script>
+<script src="./src/main.js"></script>
+</body>
+</html>

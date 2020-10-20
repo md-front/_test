@@ -1,0 +1,126 @@
+* {
+    font-family: 'Roboto';
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.clear { /* &[button] */
+    display: inline-flex;
+    margin-right: 15px;
+    align-items: center;
+    padding: 5px;
+    font-weight: 700;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+.clear.disabled {
+    opacity: .4;
+    pointer-events: none;
+}
+.clear img {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+
+
+.item {
+    padding: 15px;
+    border: 2px solid darkgray;
+    border-radius: 13px;
+}
+.item.new {
+    border-color: purple;
+}
+.item.no-exp h2 {
+    color: limegreen;
+}
+h2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 0 0 15px;
+}
+h2 span {
+    color: lightcoral;
+}
+h2 img {
+    max-width: 100px;
+    max-height: 30px;
+    margin-left: 10px;
+}
+.link {
+    display: block;
+    padding-right: 70px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: lightskyblue;
+    text-decoration: none;
+    position: relative;
+    transition: color .2s;
+}
+.link:visited {
+    color: lightgray;
+}
+.link__text--favorite {
+    color: lightskyblue;
+    border-bottom: 1px solid orange;
+}
+.link__text--blacklist {
+    color: grey;
+}
+.link:last-child {
+    margin-bottom: 0;
+}
+.link:hover {
+    color: cornflowerblue;
+}
+.link:hover [data-favorite],
+.link:hover [data-blacklist] {
+    opacity: 1;
+}
+[data-favorite] {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../assets/star.svg');
+    transform: translateY(-50%);
+    transition: transform .2s, opacity .2s;
+    opacity: 0;
+}
+[data-favorite]:hover {
+    transform: scale(1.5) translateY(-50%);
+}
+[data-blacklist] {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../assets/del.svg');
+    transform: translateY(-50%);
+    transition: transform .2s, opacity .2s;
+    opacity: 0;
+}
+[data-blacklist]:hover {
+    transform: scale(1.5) translateY(-50%);
+}
